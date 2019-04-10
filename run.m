@@ -17,6 +17,7 @@ padB = padarray(b, [psf_radius, psf_radius, 0], 0, 'both');
 PARA= auto_para(K,psf_s,b,'all',1e-3,precS,use_gpu);%½«no¸Ä³Éall
 %% run
 t1 = tic;
+
 [ d,d_hat]  = alt_min_online(padB,PARA,[],b);
 tt = toc(t1);
 %% save

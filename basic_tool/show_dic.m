@@ -37,9 +37,11 @@ end
 for j = 1:ceil(size(d,3)/rowN)+1
     new_d((s1+pd)*(j-1)+pd,:) = 1;
 end
+% 
+% figure();
+subplot(133),imshow(new_d);
+pause(0.1);
 
-figure();
-imshow(new_d)
 %imshow(new_d_disp)
 if save_flag==1
         imwrite(new_d , sprintf('%s/filter_%s.png',PARA.path,PARA.save_name),'bitdepth', 16);%%

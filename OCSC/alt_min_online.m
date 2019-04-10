@@ -55,8 +55,8 @@ for s_i=1:para.N
     objZ = objective_online(z_hat_si,d_hat, temp_b_hat,para );
    if strcmp( para.verbose, 'all')
        if (mod(s_i,scale)==0)
-            [ps] = eval_psnr(d_hat, z_hat_si,temp_b,para); 
-            fprintf('Z: no.img: %d, obj: %2.2f, psnr: %2.2f\n', s_i,objZ,ps)
+            [ps] = eval_psnr(d_hat, z_hat_si,temp_b,para,s_i); 
+            fprintf('Z: no.img: %d, obj: %2.2f, psnr: %2.2f\n', s_i,objZ,ps);
         end 
     end
     clear stat_Z           

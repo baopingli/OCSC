@@ -1,4 +1,4 @@
-function [PSNR] = eval_psnr(dd_hat,zz_hat, b, par)
+function [PSNR] = eval_psnr(dd_hat,zz_hat, b, par,i)
 %Dz = real(ifft2( reshape(sum(dd_hat.* zz_hat, 3), [par.size_x(1),par.size_x(2),size(b,3)]) ));
 Dz = real(ifft2(sum(dd_hat.* zz_hat, 3)));
 if size(par.psf_s,2) == 2   
@@ -18,6 +18,6 @@ end
 [PSNR,RMSE] = my_psnr(b,Dz);
 % subplot(211),imshow(b);
 % subplot(212),imshow(Dz);
-subplot(211),imshow(b)
-subplot(212),imshow(Dz),title(PSNR)
+% subplot(131),imshow(b),title(sprintf("Í¼Æ¬ÐòºÅ:%d",i));
+% subplot(132),imshow(Dz),title(sprintf("PSNRÖµ:%5.5g",PSNR));
 end
