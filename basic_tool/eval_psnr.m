@@ -16,8 +16,8 @@ end
 %PSNR0 = psnr(b, Dz); %%
 
 [PSNR,RMSE] = my_psnr(b,Dz);
-% subplot(211),imshow(b);
-% subplot(212),imshow(Dz);
-% subplot(131),imshow(b),title(sprintf("Í¼Æ¬ÐòºÅ:%d",i));
-% subplot(132),imshow(Dz),title(sprintf("PSNRÖµ:%5.5g",PSNR));
+subplot(211),imshow(b);
+subplot(212),imshow(Dz);
+subplot(131),imshow(b),title(sprintf("Í¼Æ¬ÐòºÅ:%d",i));
+subplot(132),imshow(Dz),title(sprintf("PSNRÖµ:%5.5g",PSNR));
 end

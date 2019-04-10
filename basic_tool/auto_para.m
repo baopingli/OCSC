@@ -1,4 +1,4 @@
-function PARA = auto_para(K,psf_s,b,des,tol,precS,use_gpu)
+function PARA = auto_para(K,psf_s,b,des,tol,precS,use_gpu,save_filters_path,save_filters_name)
 %% Debug options
 %%
 PARA = [];
@@ -29,5 +29,6 @@ PARA.rho_Z = gamma_heuristic;
 %%
 PARA.precS = precS;
 PARA.gpu = use_gpu;
-%PARA.path='/result/fruit_10';
+PARA.path=save_filters_path;
+PARA.save_name=save_filters_name;
 end

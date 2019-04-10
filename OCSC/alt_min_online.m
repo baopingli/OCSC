@@ -81,7 +81,8 @@ for s_i=1:para.N
             d_show = gather(d_curr);
             show_dic(d_show,para,0,0);
         else
-            show_dic(d_curr,para,0,0); %将save_flag改成1，
+            %这里的第三个参数代表是否将滤波器的图像进行存储。
+            show_dic(d_curr,para,1,0,s_i); %将save_flag改成1。
         end
     end
 end

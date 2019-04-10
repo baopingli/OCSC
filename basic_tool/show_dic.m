@@ -1,4 +1,4 @@
-function [] = show_dic(d,PARA,save_flag,sort_flag)
+function [] = show_dic(d,PARA,save_flag,sort_flag,i)
 s1 = size(d,1);
 if (isempty(who('sort_flag')))
     sort_flag = 1;
@@ -39,12 +39,13 @@ for j = 1:ceil(size(d,3)/rowN)+1
 end
 % 
 % figure();
-subplot(133),imshow(new_d);
+subplot(133),imshow(new_d),title(sprintf("filters:%d",i));
 pause(0.1);
 
 %imshow(new_d_disp)
 if save_flag==1
-        imwrite(new_d , sprintf('%s/filter_%s.png',PARA.path,PARA.save_name),'bitdepth', 16);%%
+        imwrite(new_d , sprintf('%s/filter_%s_%d.png',PARA.path,PARA.save_name,i),'bitdepth', 16);%%
+
         %imwrite(new_d , sprintf('%s/filter_%s.png',PARA.path,'d1'),'bitdepth', 16);%%
 end
 end

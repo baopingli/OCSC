@@ -11,10 +11,12 @@ precS = 1;
 use_gpu = 0;
 data = 'city_10';
 data = 'fruit_10';
+save_filters_path="./result/filters";
+save_filters_name=data;
 %% load data
 load (sprintf('datasets/%s/train/train_lcne.mat',data)) %%% 
 padB = padarray(b, [psf_radius, psf_radius, 0], 0, 'both');
-PARA= auto_para(K,psf_s,b,'all',1e-3,precS,use_gpu);%将no改成all
+PARA= auto_para(K,psf_s,b,'all',1e-3,precS,use_gpu,save_filters_path,save_filters_name);%将no改成all
 %% run
 t1 = tic;
 
